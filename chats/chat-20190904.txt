@@ -1,0 +1,862 @@
+Wednesday, September 4
+
+andrinurarief 9:36 PM
+has started the Live Share session
+
+
+Fathurramdhani 9:37 PM
+has joined the Live Share session
+
+
+isaljob 9:37 PM
+has joined the Live Share session
+
+
+asyudi 9:44 PM
+has joined the Live Share session
+
+
+Fathurramdhani 9:47 PM
+tes
+
+andri udh mulai ngoding?
+
+
+andrinurarief 9:47 PM
+test
+
+belum kang
+
+
+Fathurramdhani 9:48 PM
+oh, itu mas asyudi nanya
+
+
+asyudi 9:48 PM
+hoo pantesan
+
+cm ada live share chat aja
+
+
+isaljob 9:48 PM
+iya blm mulai
+
+
+andrinurarief 9:48 PM
+baru nge push ke git dulu tadi
+
+
+isaljob 9:48 PM
+itu mang fathur buka kodingan yg mana ya?
+
+
+asyudi 9:48 PM
+siap
+
+
+andrinurarief 9:49 PM
+karena database nya belum siap, untuk bulk copy next materi ya
+
+tadi lupa buat
+
+
+Fathurramdhani 9:51 PM
+siap
+
+
+asyudi 9:51 PM
+woke
+
+
+isaljob 9:51 PM
+siap ndri
+
+
+andrinurarief 9:53 PM
+mulai atau nunggu mas danang?
+
+
+c-danank 9:53 PM
+has joined the Live Share session
+
+
+isaljob 9:53 PM
+naaaah
+
+
+andrinurarief 9:54 PM
+sip semuanya udah ada ya
+
+
+c-danank 9:54 PM
+nah baru masuk
+
+
+isaljob 9:54 PM
+pake bahasa C nih mas danang
+
+
+andrinurarief 9:55 PM
+ok, kemarin udah bahas cara membaca file csv pake fungsi bawaan dari python nya
+
+sekarang kita coba belajar untuk memfilter data dan aggregasi data csv
+
+
+BayuPW 9:57 PM
+has joined the Live Share session
+
+
+isaljob 9:57 PM
+wow ombay join
+
+ramai sekali, mantap
+
+
+andrinurarief 9:58 PM
+sebagai contoh, misal kita ingin memfilter hanya Object Name RNMDN02 saja yg tampil
+
+pada proses looping pembacaan baris csv_reader, kita membuat kondisi untuk memfilter nya
+
+baris 13
+
+csv_reader.next()
+
+untuk membaca baris selanjutnya
+
+ada pertanyaan?
+
+
+isaljob 10:03 PM
+csv_reader.next() dengan csv_reader.next() apa bedanya?
+
+eh knp gitu ya, maksudnya _ _ next _ _()
+
+
+andrinurarief 10:03 PM
+underscore 2x di chat ini langsung di convert jadi bold sal
+
+
+isaljob 10:03 PM
+oh begitu
+
+
+andrinurarief 10:04 PM
+intinya, baris ke 10 di read-filter digunakan untuk membaca baris selanjutnya
+
+ada yg mau di tanyakan lagi?
+
+
+isaljob 10:06 PM
+ok dimengerti ndri
+
+
+andrinurarief 10:06 PM
+kalau nggak ada, monggo di coba, misal pingin di filter Object Name yg memiliki Label MD3G59123, MD3G57864 dan MD3G37231
+
+
+c-danank 10:07 PM
+file csv-nya yang mana ndri?
+
+
+andrinurarief 10:07 PM
+ada yg mau mencoba?
+langsung di file read-filter.py ya
+
+
+Fathurramdhani 10:07 PM
+bapa isal biasanya suka greget mau nyoba
+
+
+andrinurarief 10:08 PM
+nama file nya pmresult.csv
+
+
+isaljob 10:08 PM
+alah
+
+bapak fatur bisa saja
+
+ini kalo dirunning outputnya seperti apa ndri?
+
+
+andrinurarief 10:08 PM
+mas asyudi, om bay atau mas danang
+
+
+c-danank 10:08 PM
+yang di buka ya? 😃
+
+
+isaljob 10:08 PM
+read-filter.py
+
+
+andrinurarief 10:08 PM
+siapa tau mau mencoba
+
+iya mas nang
+
+
+asyudi 10:09 PM
+[Running] python -u "\read-filter.py"
+python: can't open file '\read-filter.py': [Errno 2] No such file or directory
+
+pas di run kok error ya?
+
+
+andrinurarief 10:09 PM
+windows mas?
+
+
+asyudi 10:09 PM
+iya
+
+
+andrinurarief 10:09 PM
+coba -u dan \ nya di hilangkan
+
+bisa nggak?
+
+
+asyudi 10:10 PM
+oh bentar
+
+
+andrinurarief 10:12 PM
+ada yg sudah?
+
+
+asyudi 10:13 PM
+bisa kalo run di terminal kang, kalo Run Code sptnya masih error
+
+
+isaljob 10:15 PM
+gitu bukan ndri?
+
+
+Fathurramdhani 10:15 PM
+bapa isal jago sekali memang
+
+
+c-danank 10:16 PM
+mantabs
+
+
+isaljob 10:16 PM
+atas instruksi bapak fatur
+
+sy hanya tukang ketik 😃
+
+
+Fathurramdhani 10:16 PM
+mana ada
+
+
+andrinurarief 10:17 PM
+monggo di coba
+
+running
+
+ada error sal
+
+
+isaljob 10:18 PM
+bukan sy ndri, hihihi
+
+
+asyudi 10:18 PM
+punya ku error haha
+
+
+andrinurarief 10:18 PM
+ada yg bisa artiin errornya?
+
+error gmn mas?
+
+
+asyudi 10:18 PM
+Traceback (most recent call last):
+File "read-filter.py", line 16, in <module>
+if label in row['Object Name']:
+TypeError: 'in <string>' requires string as left operand, not list
+
+
+isaljob 10:19 PM
+data type harus berupa string, bukan list
+
+
+andrinurarief 10:20 PM
+yg salah baris berapa?
+
+
+isaljob 10:20 PM
+di baris 16, kalo if label artinya keseluruhan array label dicek apakah ada di row
+seharusnya hanya suatu string aja buat checking nya
+
+
+andrinurarief 10:20 PM
+si
+
+sip
+
+jadi harusnya gmn?
+
+
+isaljob 10:21 PM
+if x in row
+
+
+c-danank 10:21 PM
+yang pakai {} ya?
+
+
+asyudi 10:21 PM
+ooo ic
+
+
+andrinurarief 10:21 PM
+siip
+
+
+isaljob 10:21 PM
+mantap mas asyudi
+
+
+andrinurarief 10:21 PM
+yg mana mas nang?
+
+bisa langsung di ketik?
+
+
+c-danank 10:22 PM
+😃
+
+
+asyudi 10:22 PM
+kalo row nya dituker bisa ga ya
+
+
+andrinurarief 10:23 PM
+ada jawaban lain?
+
+
+isaljob 10:23 PM
+mang fatur mau pake cara lain katanya
+
+
+andrinurarief 10:23 PM
+row di tuker gmn mas asyudi?
+
+
+asyudi 10:23 PM
+eh maksudnya for nya dituker
+
+
+andrinurarief 10:23 PM
+coba langsung di ketik aja
+
+bisa, tapi yg keluar cuman 1
+
+ada yg tau kenapa?
+
+ayo ada yg tau knp cuman kecetak 1x
+
+harusnya kang fathur dan isal ngeh, karena pernah di bahas waktu itu
+
+😄
+
+
+isaljob 10:27 PM
+karena harus pake seek
+
+dibikin 0
+
+
+andrinurarief 10:27 PM
+kenapa harus pake seek
+
+dan dimana
+
+penyimpanan seek nya
+
+
+isaljob 10:27 PM
+karena berjalan bagaikan waktu, tak kembalike asalnya ndri
+
+
+andrinurarief 10:28 PM
+coba di perbaiki bapak isal
+
+kalau udah, langsung running aja di terminal ya
+
+
+isaljob 10:31 PM
+gitu ya ndri
+
+terima kasih bapak fatur
+
+
+Fathurramdhani 10:31 PM
+luar biasa bapa faisal
+
+
+asyudi 10:31 PM
+Berarti ini list ya
+label = ['MD3G57864','MD3G59123','MD3G37231']
+
+warbiyasah
+
+
+andrinurarief 10:31 PM
+betul mas
+
+oke
+
+semua jawabannya betul
+
+mengeluarkan output yg di inginkan
+
+tapi kita coba optimasi sedikit ya
+
+jika kita looping label, kemudian row. jumlah looping nya akan terlalu banyak
+
+misal, kalau label ada 3 data, dan data csv nya ada 1000 row.
+
+akan terjadi proses perulangan
+
+akan terjadi 3000 proses perulangan
+
+karena setiap membandingkan 1 data label, cursor file harus di pindahkan ke awal file
+secara tidak langsung akan membaca dari awal baris kembali
+
+untuk jawaban 1
+
+proses perulangan nya sama dengan jawaban 2
+
+akan dilakukan 3000 kali
+
+tapi perbedaannya ada di pembacaan file csv hanya di lakukan 1x
+
+cara pertama ini lebih efisien dari cara kedua, karena tidak ada pemindahan kursor ke awal file lagi
+
+biar lebih efisien, di jawaban pertama setelah mencetak Object Name
+
+di tambahkan continue
+
+ada yg tau kenapa di tambahkan continue bisa efisien?
+
+sy jadiin jawaban 3
+
+
+Fathurramdhani 10:40 PM
+kalo ketemu, dia ga perlu baca baris selanjutnya
+
+
+isaljob 10:40 PM
+soalnya ga loop lagi
+
+
+Fathurramdhani 10:40 PM
+langsung next loop
+
+
+isaljob 10:41 PM
+pak fatur byaza diluar
+
+eh luar byaza
+
+
+andrinurarief 10:41 PM
+betul
+
+
+isaljob 10:42 PM
+eh knp yg punya sy yg paling dikit perulangannya?
+
+eh salah nyimpen counternya ya ndri tadi
+
+
+Fathurramdhani 10:43 PM
+gila, cuma gegara satu continue. luar biasa pak andri
+
+
+andrinurarief 10:43 PM
+iya salah simpen
+
+sorry bukan continue, tapi break
+
+kalau continue dia meneruskan perulangan, kalau break dia terminate loopingnya
+
+tapi alasan yg kang fathur dan isal, bener
+
+
+c-danank 10:46 PM
+1 ama 3 kok sama perulngannya?
+
+
+andrinurarief 10:47 PM
+karena source data nya mas nang, itu kan level cell jadi pasti setiap row pasti cell nya berbeda dengan row yg lain
+
+cmiiw
+
+lanjut?
+
+ke aggregate
+
+
+isaljob 10:48 PM
+bisa aja cell nya berulang ndri kalo ada dateid mah
+
+oke lanjut
+
+
+andrinurarief 10:48 PM
+iya, itu data 1 jam sal
+
+sekarang kita coba untuk buat aggregate
+
+misal kita ingin ngitung total nilai counter 73429039 untuk ke seluruhan file csv
+
+
+asyudi 10:51 PM
+kalo jumlah perulangannya sama, tau mana yg lebih efisien gmn kang?
+
+
+andrinurarief 10:52 PM
+wait sy baru keingetan seek(0, 0) memindahkan cursor ke awal baris
+
+jadi nggak adil kalau ngetest nya di dalam 1 file yg sama
+
+karena kalau pake DictReader, baris pertama sudah di skip
+
+di baca sebagai header
+
+dan di kode kita pake csv_reader. _ _ next _ _ ()
+
+jadi sudah ke skip 2 row
+
+sekarang keliatan bedanya kan?
+
+Jumlah perulangan Jawaban 1 19230
+
+Jumlah perulangan Jawaban 2 19236
+
+Jumlah perulangan Jawaban 3 19224
+
+
+asyudi 10:58 PM
+siip
+
+
+andrinurarief 10:58 PM
+mohon maaf, ada kesalahan teknis 😄
+
+lanjut?
+
+
+asyudi 10:58 PM
+lanjut
+
+
+c-danank 10:58 PM
+ok
+
+
+andrinurarief 10:59 PM
+bapak faishal, kang fathur, gmn?
+
+
+isaljob 11:00 PM
+lanjut kami mah
+
+
+andrinurarief 11:00 PM
+ok, kita buat fungsi aggregate
+
+membaca csv, lalu melakukan aggregate
+
+misal kita akan membaca file csv, lalu ingin menjumlah semua nilai dari kolom "73429039"
+
+
+isaljob 11:02 PM
+has left the Live Share session
+
+
+asyudi 11:02 PM
+has left the Live Share session
+
+
+Fathurramdhani 11:02 PM
+has left the Live Share session
+
+
+c-danank 11:02 PM
+has left the Live Share session
+
+
+Fathurramdhani 11:03 PM
+has joined the Live Share session
+
+
+isaljob 11:03 PM
+has joined the Live Share session
+
+
+c-danank 11:03 PM
+has joined the Live Share session
+
+
+asyudi 11:03 PM
+has joined the Live Share session
+
+
+andrinurarief 11:04 PM
+penyelesain nya ada di file read-csv-agg.py
+
+kita buat variable untuk menampung total nilai, inisialisasi dengan nilai 0
+
+kemudian kita looping csv_reader, dan di setiap proses looping kita tambahkan variable total dengan nilai dari kolom 73429039
+
+setelah perulangan beres, baru di cetak nilai variable total
+
+ada pertanyaan?
+
+
+asyudi 11:06 PM
+Kalo kita mau total per RNC untuk kolom tsb gimana kang?
+
+
+andrinurarief 11:07 PM
+ini yg mau di jadiin pertanyaan malahan 😄
+
+
+c-danank 11:07 PM
+😃
+
+
+andrinurarief 11:07 PM
+gmn, ada yg bisa bantu jawab?
+
+
+isaljob 11:07 PM
+dictionary ndri
+
+
+andrinurarief 11:08 PM
+yup, bisa pake dict
+
+ayo di coba bapak isal
+
+
+isaljob 11:08 PM
+sy lupa lagi euy
+
+hahaha
+
+
+andrinurarief 11:08 PM
+di coba dulu aja
+
+
+isaljob 11:08 PM
+yg lain dlu aja, ini sy mau sholat dlu
+
+😃
+
+
+andrinurarief 11:09 PM
+bapak fathur
+
+mas danang
+
+om bay
+
+
+Fathurramdhani 11:09 PM
+gimana ya
+
+
+andrinurarief 11:10 PM
+petunjuk 1 : tipe data total di ubah ke dict
+
+pembahasan singkat tentang dictionary
+
+dictionary itu sama dengan array, yg membedakan adalah key yg digunakan
+
+pada array key/index yg digunakan berupa number, dan dimulai dari 0
+
+kalau pada dictionary yg digunakan adalah alphanumeric
+
+padanan di php = associative array
+
+$total['RNMDN10'] ===>> associative array
+
+sy kasih contoh untuk 1 RNC ya
+
+monggo, kalau pingin semua RNC gmn?
+
+atau ada yg mau ditanyakan dulu?
+
+di coba dikerjain nya di read-csv-agg-group.py ya
+
+ganti baris pass dengan kode nya
+
+ada yg mau mencoba?
+
+
+Fathurramdhani 11:21 PM
+eh, saya mau nyoba tapi terminalnya error
+
+restart dulu
+
+has left the Live Share session
+
+
+andrinurarief 11:22 PM
+ok
+
+
+Fathurramdhani 11:22 PM
+has joined the Live Share session
+
+
+andrinurarief 11:28 PM
+variable itu harus di inisialisasi
+
+data['key'] += nilai
+sama dengan
+data'
+
+variable itu harus di inisialisasi
+
+data['key'] += nilai
+sama dengan
+data['key'] = data['key'] + nilai
+
+
+Fathurramdhani 11:29 PM
+hmmm
+
+
+andrinurarief 11:29 PM
+data['key'] += nilai, kalau data['key'] tidak pernah di inisialisasi, pasti errir
+
+error
+
+kecuali data['key'] = nilai
+
+pasti bisa
+
+itu kunci nya
+
+cuman kurang 2 baris kode
+
+
+Fathurramdhani 11:32 PM
+mentok, wkwkwk
+
+gabisa mikir
+
+hahaha
+
+
+andrinurarief 11:32 PM
+done
+
+
+Fathurramdhani 11:32 PM
+terima kasih banyak pak andri
+
+terbaiksss
+
+berarti dua baris itu tu untuk inisiasi ya
+
+
+andrinurarief 11:33 PM
+sama sama pak fathur
+
+ada yg mau di tanyakan
+
+
+isaljob 11:33 PM
+luar biasa
+
+
+asyudi 11:34 PM
+wah mantap, makasi pak andri & pak fathur
+
+
+andrinurarief 11:34 PM
+if rncname not in total: ==> mengecek, apakah di dict total sudah ada key dengan nama rncname, kalau belum di inisialisasi dengan 0
+
+
+Fathurramdhani 11:34 PM
+tadi saya mikirnya mau nambah satu loop lagi buat inisiasi.hahaha, ga efektif pisan
+
+
+andrinurarief 11:35 PM
+😄
+
+ada yg mau di tanyakan lagi?
+
+sebelum kita tutup pertemuan hari ini
+
+kalau nggak mau nitip PR, buat dikerjakan kalau sempat
+
+
+isaljob 11:36 PM
+pr apa ndri?
+
+jangan lupa di push ya, hehehe
+
+
+andrinurarief 11:36 PM
+pekerjaan rumah
+
+
+isaljob 11:37 PM
+masalahnya sy dikosan bukan dirumah
+
+
+andrinurarief 11:37 PM
+kosan nya bentuk rumah kan
+
+
+isaljob 11:37 PM
+bentuk kamar
+
+😃
+
+
+andrinurarief 11:37 PM
+kamar nya dalam rumah
+
+
+isaljob 11:37 PM
+rumah ibu kos
+
+
+andrinurarief 11:38 PM
+ok kalau nggak ada yg nanya
+
+buat program untuk menghitung:
+
+sum
+avg
+max
+min
+dari kolom-kolom berikut:
+
+73429041
+73429043
+73429046
+
+Fathurramdhani 11:39 PM
+has left the Live Share session
+
+
+andrinurarief 11:39 PM
+dan di grouping berdasarkan nama RNC nya
+
+
+Message Live Share Chat
