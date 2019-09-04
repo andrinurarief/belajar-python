@@ -1,0 +1,691 @@
+Fathurramdhani 1:42 PM
+has started the Live Share session
+
+
+isaljob 1:42 PM
+has joined the Live Share session
+
+naisss
+
+
+andrinurarief 1:44 PM
+has joined the Live Share session
+
+
+Fathurramdhani 1:45 PM
+mari dimulai pak andri
+
+
+andrinurarief 1:45 PM
+oke
+
+cuman bertiga?
+
+
+isaljob 1:45 PM
+sip
+
+yg lain berhalangan sepertinya
+
+
+Fathurramdhani 1:45 PM
+iya
+
+ombay ga masuk
+
+
+isaljob 1:45 PM
+ombay cuti, mas nang laptop masih error
+
+
+andrinurarief 1:46 PM
+oke
+
+
+andrinurarief 1:52 PM
+bentar ya saya mau download file contoh dullu
+
+
+andrinurarief 2:02 PM
+ok
+
+bisa di mulai?
+
+has left the Live Share session
+
+
+andrinurarief 2:06 PM
+has joined the Live Share session
+
+
+Fathurramdhani 2:06 PM
+bisa ndri
+
+hayu
+
+
+andrinurarief 2:06 PM
+ok
+
+jadi kita akan membuat aplikasi parsing
+
+
+isaljob 2:07 PM
+oke
+
+
+andrinurarief 2:07 PM
+definisi parsing itu memecah mecah
+
+artinya kita membaca file lalu isi file tersebut kita pecah pecah untuk memudhkan pembacaan, proses manipulasi, ataupun konversi
+
+di HS, istilah parsing itu dipake untuk menyatakan proses pembacaan file yang kemudian di masukan ke dalam database
+
+padahal, proses yg tersebut adalah proses ETL
+
+Extract Transform Load
+
+di dalam Extract baru kita menggunakan tools parsing
+
+untuk membaca raw data
+
+bisa dari SQL, maupun raw file
+
+
+isaljob 2:10 PM
+hmm bisa beda istilah gitu ya
+
+
+Fathurramdhani 2:10 PM
+siip
+
+
+andrinurarief 2:10 PM
+iya
+
+proses ETL itu secara garis besar seperti berikut:
+
+Source --> Read Data / Parsing --> Transform, Aggregate, Filter --> Destination
+
+
+Fathurramdhani 2:12 PM
+berarti ETL itu end to end ya
+
+
+andrinurarief 2:12 PM
+seperti yg di terangkan di atas, source nya itu bisa berupa database, file, streaming, IO device
+
+destination nya pun sama, tapi untuk destination lebih banyak tipe database dan file yang digunakan
+
+sekarang kita focus ke extract dulu
+
+yang akan di pelajari di awal adalah cara membaca file csv dan xml
+
+karena 2 tipe file itu yang sering di jumpai di perangkat oss
+
+file pmresult.csv nya kebaca kan di kalian?
+
+
+isaljob 2:14 PM
+kebaca ndri
+
+
+andrinurarief 2:15 PM
+itu adalah contoh real dari pmresult oss huawei
+
+sebagai informasi, untuk oss huawei export data pm itu ada 2 bentuk
+
+subset based ==> output CSV
+
+ne based ==> output XML
+
+perbedaannya untuk subset based, dalam 1 file terdapat banyak NE. dan yang menjadi header adalah counter-counter yang terdapat pada subset tersebut
+
+sedangkan pada ne based, 1 file XML itu hanya terdiri dari 1 NE, tapi memiliki banyak counter dan subset
+
+pada dasarnya kemarin secara nggak langsung kita sudah belajar cara untuk membaca file csv
+
+menggunakan fungsi open dan split
+
+fungsi split pada csv digunakan untuk memisahkan data data
+
+tapi untungnya kita tidak usah menggunakan fungsi tersebut
+
+karena di python sudah ada library khusus untuk memproses file csv
+
+
+isaljob 2:18 PM
+alhamdulillah
+
+
+andrinurarief 2:19 PM
+untuk mengimport library di python, di awal file cukup menuliskan kode
+
+import nama_library
+
+contoh karena akan menggunakan library csv
+
+cukup ketikan
+
+import csv
+
+kemudian kita define nama file yang akan dibaca
+
+terus kita buka file tersebut
+
+kita buka dengan mode read saja
+
+selanjutnya kita akan menggunakan fungsi reader pada library csv untuk membaca file tersebut
+
+dan kita set delimiter nya menjadi ,
+
+agar loadnya tidak terlalu lama, kita batasi outputnya jadi 10 baris dulu ya
+
+setelah itu kemudian kita baca baris perbaris dengan melakukan perulangan pada csv_reader
+
+
+isaljob 2:23 PM
+ok ndri
+
+
+andrinurarief 2:24 PM
+mangga kang fathur di jalankan aplikasinya
+
+maaf tadi ada variable yg bentrok
+
+
+Fathurramdhani 2:25 PM
+andri kebanyakan ngoding C
+
+
+andrinurarief 2:25 PM
+ada pertanyaan?
+
+
+isaljob 2:26 PM
+sebentar sy memahami dlu kode nya
+
+nge limitnya pake if row_count == 10, pake range bisa juga kan ndri seperti pelajaran sebelumnya
+
+?
+
+
+andrinurarief 2:28 PM
+coba kalau pake range gmn sal?
+
+
+isaljob 2:30 PM
+eh gajadi ketang ndri
+
+😃
+
+
+andrinurarief 2:31 PM
+nah sekarang gmn kalau yg mau di output ke console itu Object Name nya aja
+
+?
+
+
+isaljob 2:32 PM
+maksud sy mungkin gini ndri, for row in csv_reader[:10]:
+
+
+andrinurarief 2:32 PM
+ya langsung di coba aja sal
+
+nanti kita bahas bersama bisa dan nggak nya
+
+
+isaljob 2:33 PM
+gitu paling ya
+
+ga hemat memori ya kalo di masukin dlu ke list?
+
+
+andrinurarief 2:34 PM
+knp yg awal nggak bisa sal?
+
+
+isaljob 2:35 PM
+kayanya karena belum berupa list/array
+
+
+Fathurramdhani 2:36 PM
+csv reader itu masih alamat memory ya ndri?
+
+
+andrinurarief 2:36 PM
+'_csv.reader' object is not subscriptable
+
+dia bukan berupa list tapi object iterable
+
+jadi tidak bisa menggunakan subscript [start:end]
+
+
+isaljob 2:37 PM
+hmm itu alasannya ya
+
+
+andrinurarief 2:37 PM
+kalau untuk csv, usahakan jangan di tampung semua ke list
+
+untuk file ukuran kecil tidak masalah
+
+kalau ukuran nya besar akan memakan banyak memori
+
+karena saat menggunakan fungsi list data akan di konversi dulu
+
+jadi ke proses 2 kali
+
+
+isaljob 2:38 PM
+misalnya kuran file 100MB, itu termasuk besar atau sedang2 aja ndri?
+
+
+andrinurarief 2:38 PM
+kalau menggunakan csv reader, sama halnya dengan file
+
+forward reader
+
+artinya dia baca kedepan
+
+yang di simpan di memory atau di buffer hanya data saat itu saja
+
+ukuran file 100MB besar atau kecil itu tergantung
+
+tergantung dari spek komputer, proses yang akan dilakukan
+
+jenis filenya juga berpengaruh
+
+misal 100MB zip itu memang kecil
+
+tapi setelah di extract besar juga kan ukurannya
+
+dan proses decompress itu akan memakan banyak memory dan cpu cycle
+
+ada pertanyaan?
+
+
+isaljob 2:42 PM
+oke ndri dimengerti
+
+
+Fathurramdhani 2:42 PM
+di csv_reader berarti kalo mau ke balik baca ke atas, harus pake seek lagi ndri?
+
+ato ga perlu?
+
+
+andrinurarief 2:42 PM
+file nya yang di seek
+
+atau kita coba aja for nya 2x ya buat memastikan
+
+nah kalau di liat dari output dia nggak balik lagi kan
+
+
+isaljob 2:44 PM
+iya ya next terooos
+
+
+andrinurarief 2:44 PM
+sekarang kita coba pake seek
+
+seek(0, 0)
+
+terulang lagi dari awal kan
+
+yg di seek itu csv_file nya ya
+
+bukan csv_readder
+
+karena csv reader hanya library untuk membaca baris dari file
+
+
+Fathurramdhani 2:46 PM
+pointernya gerak di csv_filenya berarti ya ndri
+
+
+andrinurarief 2:46 PM
+ketika sudah membaca 1 baris, csv reader akan mentrigger csv file untuk membaca baris selanjutnya
+
+
+isaljob 2:46 PM
+mantap master
+
+
+Fathurramdhani 2:46 PM
+csv_reader yang ngebacanya
+
+got it
+
+
+andrinurarief 2:46 PM
+yup betul bapak fathur
+
+ada pertanyaan lagi?
+
+
+isaljob 2:46 PM
+ajari aku pak
+
+
+andrinurarief 2:47 PM
+balik lagi ke pertanyaan tadi
+
+kalau mau cetak Object Name nya aja gimana
+
+nggak semua kolom
+
+
+isaljob 2:48 PM
+kalo pake list mah tinggal di pilih index nya aja
+
+yang dikehendaki
+
+
+andrinurarief 2:49 PM
+ayo ada yg tau?
+
+coba coba aja di file read-csv-selected-column
+
+
+Fathurramdhani 2:50 PM
+coba dulu yah
+
+
+andrinurarief 2:50 PM
+silahkan
+
+yup betul
+
+kalau kita print row
+
+
+isaljob 2:51 PM
+jago seperti ayam jago mang fatur
+
+
+andrinurarief 2:51 PM
+bisa keliatan bahwa row itu adalah array / list
+
+bisa di liat dari [ di awal dan ] di akhir
+
+artinya kita bisa menggunakan indeks untuk mengakses data di posisi tertentu
+
+
+isaljob 2:52 PM
+hmm begitu rupanya
+
+ndri row_count = 0 nya dibawah #dibatasi hanya 10 row boleh ga? biar gampang mengenalinya
+
+hehehe
+
+
+andrinurarief 2:53 PM
+boleh sal
+
+sekarang kalau kita liat file source csv nya
+
+baris kedua di dalam file hanya informasi
+
+satuan dari kolom tersebut
+
+seharusnya data tersebut nggak akan kita proses
+
+nah ada yg tau gmn caranya untuk menskip line 2 tersebut?
+
+['', 'Minutes', '', '', 'None', 'None', 'None', 'None', 'None', 'None', 'None', 'None', 'None', 'None', 'None', 'None', 'None', 'None', 'None', 'None', 'None', 'None']
+
+baris ini tidak di tampilkan
+
+monggo di coba coba dulu
+
+di read-csv-skip-line
+
+
+Fathurramdhani 2:57 PM
+line ke-1 tetep dibaca ya ndri?
+
+
+isaljob 2:57 PM
+gimana nulisnya
+
+if index row[1] continue, jadi ga di print
+
+yesssss
+
+pake cara bodoh bisa rupanya
+
+😃
+
+
+Fathurramdhani 3:01 PM
+saya coba cara lain ya
+
+
+asyudi 3:01 PM
+has joined the Live Share session
+
+
+Fathurramdhani 3:03 PM
+salah
+
+wkwkwk
+
+
+andrinurarief 3:05 PM
+ayo
+
+
+asyudi 3:06 PM
+File csv nya mana pak? Saya ketinggalan, maaf telat hehe
+
+wah udah bisa. Makasi sal.
+
+
+isaljob 3:08 PM
+siap sama2
+
+
+Fathurramdhani 3:09 PM
+kenapa ga bisa ya ndri?
+
+
+andrinurarief 3:12 PM
+row count nya nggak akan nambah lagi kang
+
+stuck di 1 terus
+
+salah penempatan aja
+
+
+Fathurramdhani 3:13 PM
+wkwkwk
+
+kenapa yang tadi ga jalan ya?
+
+ooh
+
+ngerti ngerti
+
+siip makasih ndri
+
+
+andrinurarief 3:14 PM
+siip kang
+
+ada cara lain?
+
+
+Fathurramdhani 3:14 PM
+enumerate
+
+bisa gaya
+
+
+andrinurarief 3:15 PM
+monggo di coba
+
+
+isaljob 3:17 PM
+gile bapak fatur
+
+
+Fathurramdhani 3:18 PM
+ndri, kalo mau ngesave chatnya gmana?
+
+
+andrinurarief 3:19 PM
+di copy paling kang
+
+
+Fathurramdhani 3:20 PM
+oh siap
+
+
+andrinurarief 3:21 PM
+lanjut?
+
+
+Fathurramdhani 3:21 PM
+sholdul yuk
+
+
+isaljob 3:22 PM
+iya lah sholat dlu
+
+
+andrinurarief 3:22 PM
+oke
+
+
+Fathurramdhani 3:22 PM
+sessionnya ga saya close
+
+
+isaljob 3:22 PM
+if waktu == waktu sholat
+
+break
+
+
+Fathurramdhani 3:23 PM
+mudah2an ga keclose
+
+
+andrinurarief 3:23 PM
+chat aja kalau udah ready
+
+
+Fathurramdhani 3:45 PM
+ready
+
+
+isaljob 3:45 PM
+lanjut
+
+
+andrinurarief 3:46 PM
+ok
+
+
+isaljob 3:47 PM
+sy ada request euy, disco dlu ya, hrus pake noc-pths
+
+
+andrinurarief 3:47 PM
+ok
+
+mau nunggu isal atau gmn?
+
+
+Fathurramdhani 3:48 PM
+lanjut aja ndri
+
+nanti isalnyusul
+
+
+isaljob 3:48 PM
+has left the Live Share session
+
+
+andrinurarief 3:49 PM
+ok sekarang kita udah bisa parsing datanya
+
+tapi untuk mengakses column nnya harus menggunakan indeks
+
+kekurangan jika kita menggunakan indeks adalah, kalau posisi kolomnya berubah
+
+library csv selain menyediakan akses menggunakan indeks
+
+dapat mengakses data pada kolom dengan menggunakan namanya
+
+kita tinggal mengganti csv.reader menjadi csv.DictReader
+
+nah pertanyaannya kalau kita mau ngeprint object name
+
+ada yg tau caranya?
+
+
+Fathurramdhani 3:54 PM
+saya coba baca dulu ndri
+
+
+andrinurarief 3:55 PM
+karena sudah menggunakan dictionary, bukan list
+
+kita dapat langsung mengakses nya dengan kode
+
+row['Object Name']
+
+
+Fathurramdhani 3:58 PM
+kalo mau ngambil kolom tertentu, berarti tinggal row['nama kolom'] gitu ya ndri?
+
+
+andrinurarief 3:58 PM
+iya kang
+
+baris pertama dari file csv langsung di jadikan nama kolomnya
+
+case sensitive ya
+
+
+Fathurramdhani 3:58 PM
+siap
+
+kmaren2 saya bikin ga pake csvDictReader
+
+jadi bikin list nama kolom, baru dicari indexnya
+
+
+andrinurarief 4:00 PM
+sekarang gmn kalau baris kedua mau di skip?
+
+
+Fathurramdhani 4:00 PM
+lebih simple pake ini ya
+
+
+Fathurramdhani 4:05 PM
+begitu kayanya ndri
+
+
+andrinurarief 4:10 PM
+siip
+
+bisa pake cara lain juga
+
+csv_reader.next()
+
+menggunakan fungsi next
+
+
+andrinurarief 4:16 PM
+kita sudahi dulu ya
+
+nanti kalau ada pertanyaan lanjut di group
+
+sy mau pulang dulu
+
