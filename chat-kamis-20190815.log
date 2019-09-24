@@ -1,0 +1,218 @@
+Thursday, August 15
+
+andrinurarief 1:10 PM
+has started the Live Share session
+
+
+Bayu 1:18 PM
+has joined the Live Share session
+
+
+Fathur 1:19 PM
+has joined the Live Share session
+
+has left the Live Share session
+
+
+Fathur 1:21 PM
+has joined the Live Share session
+
+
+Bayu 1:22 PM
+has left the Live Share session
+
+
+Fathur 1:22 PM
+tes
+
+
+faishal 1:22 PM
+has joined the Live Share session
+
+
+Bayu 1:22 PM
+has joined the Live Share session
+
+
+andrinurarief 1:22 PM
+yo
+
+
+faishal 1:22 PM
+test
+
+
+andrinurarief 1:23 PM
+ready?
+
+
+faishal 1:23 PM
+ready
+
+
+Fathur 1:23 PM
+siap
+
+
+dg 1:24 PM
+has joined the Live Share session
+
+
+andrinurarief 1:24 PM
+mulai?
+
+
+faishal 1:24 PM
+yuhu
+
+
+andrinurarief 1:24 PM
+kita bahas tentang operator dulu
+
+
+faishal 1:25 PM
+ok
+
+
+andrinurarief 1:25 PM
+operator di python ada beberapa macam
+
+
+dg 1:25 PM
+kuy
+
+
+andrinurarief 1:26 PM
+arithmatic, assignment, comparison, logical, identity, membership dan bitwise
+
+yg pertama kita bahas arithmetic
+
+baris ke 4 - 10 adalah contoh penggunaan operator arithmetic
+
+sudah di kasih komentar di setiap baris kode untuk detail penjelasan
+
+ada pertanyaan?
+
+
+Fathur 1:30 PM
+lanjut
+
+
+andrinurarief 1:30 PM
+kalau gitu saya yg nanya
+
+
+faishal 1:31 PM
+seperti dosen
+
+
+andrinurarief 1:31 PM
+baris 22 dan 23 hasilnya apa?
+
+berapa maksudnya
+
+
+dg 1:31 PM
+2.6
+
+2
+
+
+andrinurarief 1:32 PM
+ada jawaban lain?
+
+
+faishal 1:32 PM
+2.6
+
+
+Bayu 1:33 PM
+has left the Live Share session
+
+
+andrinurarief 1:33 PM
+jawabannya 2
+
+ada yg tau kenapa?
+
+
+faishal 1:33 PM
+karena bukan float
+
+
+dg 1:33 PM
+dibuletin ?
+
+
+faishal 1:34 PM
+x sebagai integer
+
+
+andrinurarief 1:34 PM
+betul, 13 dan 5 adalah integer
+
+jika operasi bilangan integer
+
+hasilnya puun integer
+
+
+dg 1:34 PM
+ok
+
+
+faishal 1:34 PM
+hebat euy mang don
+
+
+andrinurarief 1:34 PM
+kalau hasilnya pingin 2.6
+
+ada yg tau harus di rubah?
+
+
+Fathur 1:35 PM
+python3
+
+
+faishal 1:35 PM
+print(float(x))
+
+
+andrinurarief 1:35 PM
+coba kode lengkap nya pak isal
+
+
+faishal 1:36 PM
+x = float(13/5)
+print(x)
+
+
+dg 1:36 PM
+kasih tanda petik aja bisa ga haha
+
+
+andrinurarief 1:36 PM
+hasilnya masih 2.0
+
+
+faishal 1:36 PM
+eh naha nya
+
+x = float(13)/float(5)
+print(x)
+
+
+andrinurarief 1:37 PM
+ada yg tau ?
+
+
+faishal 1:37 PM
+joss
+
+
+andrinurarief 1:37 PM
+tapi ada cara yg lebih singkat
+
+coba di perhatikan di baris 31
+
+cukup menambakan .0 pada salah satu / kedua number
